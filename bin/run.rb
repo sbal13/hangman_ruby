@@ -17,14 +17,30 @@ while play == 'y'
 	end
 
 	if game_instance.won
+		system("clear")
+		sleep(1)
+
 		user.wins += 1
-		puts "You won!"
+		print "You "
+		sleep(1)
+		puts "won!"
+		sleep(1)
+
+		puts ""
 		puts "The word/phrase was: "
 		puts "'#{game_instance.word.capitalize}'!"
 		puts "Your record is #{user.wins} wins to #{user.losses} losses!"
 	else 
 		user.losses += 1
-		puts "You lost!"
+		system("clear")
+		sleep(1)
+
+		print "You "
+		sleep(1)
+		puts "lost!"
+
+		sleep(1)
+		puts ""
 		puts "The word/phrase was: "
 		puts "'#{game_instance.word.capitalize}'!"
 		puts "Your record is #{user.wins} wins to #{user.losses} losses!"
