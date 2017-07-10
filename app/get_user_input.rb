@@ -1,8 +1,57 @@
 
 def welcome
-	puts "Welcome to Hangman!"
-	puts "Please enter a name:"
-	name = gets.chomp
+    
+    noose = []
+
+    noose<<"               (/)"
+    noose<<"               (/)"
+    noose<<"               (/)"
+    noose<<"               (/)"
+    noose<<"               (/)"
+    noose<<"               (/)"
+    noose<<"               (/))"
+    noose<<"              (/)(/)"
+    noose<<"             (/)‘`(/)"
+    noose<<"            (/)    (/)"
+    noose<<"            (/)    (/)"
+    noose<<"            (/)    (/)"
+    noose<<"            (/)    (/)"
+    noose<<"             (/)  (/)"
+    noose<<"              (/)(/)"
+    noose<<"               `''`"
+
+    system("clear")
+    sleep(1)
+
+    noose.each do|n| 
+        puts n
+        sleep(0.15)
+    end
+    sleep(0.5)
+
+    puts ""
+    blink = true
+    4.times do
+    if blink
+      message = "         Welcome to Hangman!   \r"
+      blink = false
+      sleep(0.5)
+    else 
+      message = "                               \r"
+      blink = true
+      sleep(1)
+    end
+    print message
+    $stdout.flush
+    end
+    puts "         Welcome to Hangman!"
+    sleep(1)
+    puts "           Ready to hang?"
+    puts ""
+
+    puts "Please enter a name"
+    name = gets.chomp
+    name
 end
 
 
@@ -50,16 +99,3 @@ def switch_user?
 	end	
 end
 
-def obtain_guess
-	puts "Please guess a letter: "
-	guess = gets.chomp.downcase
-
-	if guess =~ /[[:alpha:]]/
-		guess
-	else
-		puts "That is not a valid input, please try again!"
-		puts ""
-		sleep(1)
-		obtain_guess
-	end
-end
