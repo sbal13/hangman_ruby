@@ -19,6 +19,10 @@ User class file:
 
 Game class file:
 	class: game
-	
+	reader: word, turn
+	methods: display_word, display_guessed_letters, display_hangman, win?, evaluate_guess, correct_guess, incorrect guess
+
+Hangman display file:
+
 
 
