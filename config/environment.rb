@@ -1,4 +1,3 @@
-require 'pry'
 require_relative "../app/game_class.rb"
 require_relative "../app/user_class.rb"
 require_relative "../app/hangman_art.rb"

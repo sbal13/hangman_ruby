@@ -30,8 +30,7 @@ class Game
 			puts ""
 			sleep(1)
 			guess_letter
-		end
-		if guess =~ /[[:alpha:]]/ && guess.length == 1
+		elsif guess =~ /[[:alpha:]]/ && guess.length == 1
 			guess
 		else
 			puts "That is not a valid input, please try again!"
