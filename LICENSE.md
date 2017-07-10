@@ -1,0 +1,1 @@
+This version of hangman is property of Jacob Lyons and Steven Balasta.
