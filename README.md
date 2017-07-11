@@ -28,5 +28,4 @@ Random words file.
 
 
 
-To run, use the environment.rb file in the config folder.
 
