@@ -11,6 +11,7 @@ while play == 'y'
 
 	while !game_instance.won && game_instance.incorrect_attempts < 6
 		system("clear")	
+		puts nil
 		puts game_instance.display_hangman
 		puts "You have #{6 - game_instance.incorrect_attempts} guess(es) left!"
 		game_instance.guess_final_word_or_letter
@@ -23,7 +24,7 @@ while play == 'y'
 		user.wins += 1
 		print "You "
 		sleep(1)
-		puts "won!"
+		puts "win!"
 		sleep(1)
 
 		puts ""
@@ -37,7 +38,7 @@ while play == 'y'
 
 		print "You "
 		sleep(1)
-		puts "lost!"
+		puts "lose!"
 
 		sleep(1)
 		puts ""

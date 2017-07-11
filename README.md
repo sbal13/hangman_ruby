@@ -22,7 +22,11 @@ Game class file:
 	reader: word, turn
 	methods: display_word, display_guessed_letters, display_hangman, win?, evaluate_guess, correct_guess, incorrect guess
 
-Hangman display file:
+Hangman display file
+
+Random words file.
 
 
+
+To run, use the environment.rb file in the config folder.
 

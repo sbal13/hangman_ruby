@@ -11,8 +11,22 @@ class Game
 		@won = false
 	end
 
+	def display_hangman_wrong
+		# if @incorrect_attempts == 0
+		# 	HangmanArt.hangman_array[0]
+		# else
+			(0..@incorrect_attempts).to_a.each do |index|
+				system("clear")
+				puts nil
+				puts HangmanArt.hangman_array[index]
+				sleep(0.75)
+			end
+		# end
+		nil
+	end
+
 	def display_hangman
-		HangmanArt.hangman_array[@incorrect_attempts]
+		puts HangmanArt.hangman_array[@incorrect_attempts]
 	end
 
 	def guess_letter
@@ -53,26 +67,48 @@ class Game
 	end
 
 	def correct_guess
-		system("clear")
-		puts "Correct guess!"
+		blink = true
+		@previous_correct ||= display_word.gsub(/[[:alpha:]]/, "_")
+		9.times do
+			if blink
+				system("clear")
+				puts nil
 
-		puts display_hangman
-		puts display_word
-		sleep(2)
+				display_hangman
+				puts nil
+				puts "Correct guess!"
+				puts nil
+				puts display_word
+				blink = false
+				sleep(0.8)
+			else
+				system("clear")
+				puts nil
+
+				display_hangman
+				puts nil
+				puts "Correct guess!"
+				puts nil
+				puts @previous_correct
+				blink = true
+				sleep(0.2)
+			end
+		end
+		@previous_correct = display_word
 	end
 
 	def incorrect_guess
 		system("clear")
-		puts "Too bad."
 		@incorrect_attempts += 1
 
-		puts display_hangman
-		puts display_word
-		sleep(2)
+		display_hangman_wrong
+		puts nil
+		puts "Too bad."
+		sleep(3)
 	end
 
 	def display_word
-		@word.split(" ").map{ |w| w.gsub(/[^#{@guessed_letters}]/, "_ ")}.join("   ")
+		@word.split(" ").map{ |w| w.gsub(/[^#{@guessed_letters}]/, "_")}.join("   ")
 	end
 
 	def guess_final_word_or_letter
