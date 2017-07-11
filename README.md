@@ -1,30 +1,33 @@
-Input file:
-	#new_user?
-		-Asks user if new. If so, print out rules and prompt for a name
-	#difficulty?
-		-Ask difficulty level(easy, medium, hard)
-	#play_again?
-		-Yes/No
-	#switch_user?
-		-Yes/No
-	#guess
-		-User's guess
 
+# Hangman
 
+Welcome to Hangman. This is a play on the classic game of trying to guess a word or phrase before you are hanged.
 
-User class file:
-	class: User
-	accessors: name, wins, losses
-	methods: win_loss_ratio, 
+## Getting Started
 
-Game class file:
-	class: game
-	reader: word, turn
-	methods: display_word, display_guessed_letters, display_hangman, win?, evaluate_guess, correct_guess, incorrect guess
+This runs on straight Ruby, so no gems or additional files required.
 
-Hangman display file
+## Playing the Game
 
-Random words file.
+At the start you will be prompted to enter a user name, and select if you want to guess a single word or a phrase. Follow the directions to guess the correct answer before you are hanged!
+
+## Tests
+
+Run the environment.rb file in your terminal to begin the game.
+
+## Built With
+
+Standard Ruby
+
+## Contributors
+
+* **Steven Balasta** - *Primary Work* - [sbal13](https://github.com/sbal13)
+* **Jacob Lyon** - *Primary Work* - [jacobhlyon](https://github.com/jacobhlyon)
+* Contact us via GitHub with any questions, comments, or patches
+
+## Acknowledgements
+
+* The wild west for inspiring such a brutal game of words
 
 
 
