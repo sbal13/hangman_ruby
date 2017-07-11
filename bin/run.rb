@@ -1,8 +1,5 @@
-require_relative "../app/game_class.rb"
-require_relative "../app/user_class.rb"
-require_relative "../app/hangman_art.rb"
-require_relative "../app/random_words.rb"
-require_relative "../app/get_user_input.rb"
+require_relative "../config/environment.rb"
+
 
 
 
@@ -16,6 +13,8 @@ while play == 'y'
 	current_difficulty = difficulty?
 	game_instance = Game.new(RandomWords.word_or_phrase?(current_difficulty).downcase, user)
 
+	##Game runner
+
 	while !game_instance.won && game_instance.incorrect_attempts < 6
 		system("clear")	
 		puts nil
@@ -23,6 +22,9 @@ while play == 'y'
 		puts "You have #{6 - game_instance.incorrect_attempts} guess(es) left!"
 		game_instance.guess_final_word_or_letter
 	end
+
+
+	##Win or loss evaluation and message
 
 	if game_instance.won
 		system("clear")
